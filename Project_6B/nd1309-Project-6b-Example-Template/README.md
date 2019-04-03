@@ -13,12 +13,12 @@ The DApp User Interface when running should look like...
 ![truffle test](images/ftc_transaction_history.png)
 
 # Deployed Contracts
-SupplyChain: 0x918f271539bc69eb2a620c6d6a4e316f15b1a715
-ManufacturerRole: 0xa6c3b316852b5c7e57fe529e62e4a0b2dc52df98
-RetailerRole: 0x384f575b5b400bda7dd67cbecc0902b6463d29ed
-CustomerRole: 0xadf76dcb15177c39ebe9f0328989de26d11d2d0f
+## SupplyChain: 0x918f271539bc69eb2a620c6d6a4e316f15b1a715
+## ManufacturerRole: 0xa6c3b316852b5c7e57fe529e62e4a0b2dc52df98
+## RetailerRole: 0x384f575b5b400bda7dd67cbecc0902b6463d29ed
+## CustomerRole: 0xadf76dcb15177c39ebe9f0328989de26d11d2d0f
 
-My rinkeby address : https://rinkeby.etherscan.io/address/0x627306090abab3a6e1400e9345bc60c78a8bef57
+## My rinkeby address : https://rinkeby.etherscan.io/address/0x627306090abab3a6e1400e9345bc60c78a8bef57
 
 ## Getting Started
 
