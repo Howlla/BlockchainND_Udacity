@@ -1,5 +1,3 @@
-// This script is designed to test the solidity smart contract - SuppyChain.sol -- and the various functions within
-// Declare a variable and assign the compiled smart contract artifact
 var SupplyChain = artifacts.require('SupplyChain')
 
 contract('SupplyChain', function(accounts) {
@@ -78,7 +76,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted=false
         
         // Watch the emitted event Processed()
-        var event = SupplyChain.Processed()
+        var event = supplyChain.Packed()
         await event.watch((err,res)=>{
             eventEmitted=true
         })
@@ -96,13 +94,13 @@ contract('SupplyChain', function(accounts) {
 
     // 3rd Test
     it("Testing smart contract function addItem() that allows a manufacturer to add item", async() => {
-        const supplyChain = await SupplyChain.deployed()
+        const supplyChain = await SupplyChain.deployed();
         
         // Declare and Initialize a variable for event
-        var eventEmitted =false
+        var eventEmitted =false;
         
         // Watch the emitted event Added()
-        var event = supplyChain.Added()
+        var event = supplyChain.Added();
         await event.watch((err,res)=>{
             eventEmitted=true
         })
@@ -110,7 +108,7 @@ contract('SupplyChain', function(accounts) {
         await supplyChain.addItem(upc,productPrice,retailerID,{from:originManufacturerID})
 
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        const resultBuffer = supplyChain.fetchItem.call(upc)
+        const resultBuffer = await supplyChain.fetchItem.call(upc)
 
         // Verify the result set
         assert.equal(resultBuffer[5], 2, 'Error: Invalid item State');
