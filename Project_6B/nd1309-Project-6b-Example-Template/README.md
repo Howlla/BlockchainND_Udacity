@@ -18,6 +18,8 @@ The DApp User Interface when running should look like...
 ## RetailerRole: 0x384f575b5b400bda7dd67cbecc0902b6463d29ed
 ## CustomerRole: 0xadf76dcb15177c39ebe9f0328989de26d11d2d0f
 
+## TX HASH 0x70bc79ab3513a664139a56674372dc2c3a0a5b8e883418d2ef0915aef9ecd1f5
+
 ## My rinkeby address : https://rinkeby.etherscan.io/address/0x627306090abab3a6e1400e9345bc60c78a8bef57
 
 ## Getting Started
