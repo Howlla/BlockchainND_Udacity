@@ -1,6 +1,6 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 
-const mnemonic = "DONT PUT MNEMONIC IN GITHUB FILES";
+const mnemonic = "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";
 
 module.exports = {
   networks: {
