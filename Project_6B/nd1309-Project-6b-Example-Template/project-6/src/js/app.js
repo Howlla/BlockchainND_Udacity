@@ -161,7 +161,7 @@ App = {
     processItem: function(event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
-
+        // console.log(App.retailerID)
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.processItem(
                 App.upc,
@@ -182,7 +182,6 @@ App = {
     packItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
-
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.packItem(App.upc, {from: App.originManufacturerID});
         }).then(function(result) {
@@ -190,13 +189,14 @@ App = {
             console.log('packItem',result);
         }).catch(function(err) {
             console.log(err.message);
+
         });
     },
 
     addItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
-
+        // console.log(App.retailerID,"retailerID")
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.addItem(App.upc,App.productPrice,App.retailerID, {from: App.originManufacturerID});
         }).then(function(result) {
@@ -208,16 +208,17 @@ App = {
     },
 
     receiveItem: function (event) {
+        // console.log(App.retailerID,"retailerID")
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
-
+        console.log(App.retailerID,"retailerID")
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            return instance.receiveItem(App.upc, App.productNotes, {from: App.retailerID});
+            return instance.receiveItem(App.upc, App.productNotes)
         }).then(function(result) {
             $("#ftc-item").text(result);
             console.log('receiveItem',result);
         }).catch(function(err) {
-            console.log(err.message);
+            console.log(err);
         });
     },
 
@@ -226,7 +227,7 @@ App = {
         var processId = parseInt($(event.target).data('id'));
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            return instance.shipItem(App.upc, App.consumerID, {from: App.metamaskAccountID});
+            return instance.shipItem(App.upc, App.consumerID, {from: App.retailerID});
         }).then(function(result) {
             $("#ftc-item").text(result);
             console.log('shipItem',result);
