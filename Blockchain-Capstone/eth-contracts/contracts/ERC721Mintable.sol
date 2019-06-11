@@ -530,7 +530,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     }
 }
 //  TODO's: Create CustomERC721Token contract that inherits from the ERC721Metadata contract. You can name this contract as you please
-contract GharContract is ERC721Metadata ("GharContract", "GHC","https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/"){
+contract ERC721Mintable is ERC721Metadata ("GharContract", "GHC","https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/"){
 
 
 //    constructor (string memory name, string memory symbol, string memory baseTokenURI) public {
@@ -543,7 +543,7 @@ contract GharContract is ERC721Metadata ("GharContract", "GHC","https://s3-us-we
 //      -takes in a 'to' address, tokenId, and tokenURI as parameters
 //      -returns a true boolean upon completion of the function
 //      -calls the superclass mint and setTokenURI functions
- function mint(address to, uint256 tokenId, string memory _tokenURI) public  onlyOwner returns (bool) {
+ function mint(address to, uint256 tokenId) public  onlyOwner returns (bool) {
         _mint(to, tokenId);
         setTokenURI(tokenId);
         return true;
